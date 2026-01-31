@@ -1,0 +1,6 @@
+[submodule "Unity"]
+	path = Unity
+	url = git@github.com:ThrowTheSwitch/Unity.git
+[submodule "tddec-code"]
+	path = tddec-code
+	url = git@github.com:jwgrenning/tddec-code.git
