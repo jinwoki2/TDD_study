@@ -20,7 +20,7 @@ SRC_FILES = $(UNITY_ROOT)/src/unity.c \
 TARGET = LedDriverTest
 
 all: $(TARGET)
-	./$(TARGET)
+# 	./$(TARGET)
 
 $(TARGET): $(SRC_FILES)
 	$(CC) $(CFLAGS) $(INC_DIRS) $(SRC_FILES) -o $(TARGET)
