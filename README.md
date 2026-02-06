@@ -1,9 +1,11 @@
-Book			:	임베디드 C를 위한 TDD (Test-Driven Development for Embedded C)
-	Author		:	제임스 W. 그레닝 (James W Greening)
-	Translator	:	신제용, 한주영
-	Publisher	:	(주)도서출판 인사이트(insight)
+Book			:	임베디드 C를 위한 TDD (Test-Driven Development for Embedded C)  
+- Author		:	제임스 W. 그레닝 (James W Greening)
+- 	Translator	:	신제용, 한주영
+- Publisher		:	(주)도서출판 인사이트(insight)
+
 
 Recommendation prerequisite skill: OOP in C 
+
 
 You can learn this book:
 - A method of Test Harness(framwork) - (Unity, CppUTest)
@@ -12,6 +14,7 @@ You can learn this book:
 - OOP in C
 - SOLID in C
 
+
 Must
 - gitsubmodule을 통해 Unity를 불러온다
 	- git submodule add <저장소_URL> <경로>
@@ -19,6 +22,7 @@ Must
 
 책을 그대로 따라가면 문제가 없지만 Makefile을 직접 작성하고 싶을 땐 어려움이 생긴다.
 직접 make를 실행하기 위해서는 다음과 같이 Makefile 안에 Unity를 컴파일하도록 작성해야 한다.
+
 
 ```Makfile
 NAME		=	test
