@@ -1,31 +1,43 @@
-CC = gcc
-CFLAGS = -std=c99 -Wall -Werror -g
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jinwoki2 <jinwoki2@student.42gyeongsan.kr> +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2026/02/06 22:43:16 by jinwoki2          #+#    #+#              #
+#    Updated: 2026/02/06 23:02:30 by jinwoki2         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-# Unity 프레임워크 경로 (실제 경로에 맞게 수정하세요)
-UNITY_ROOT = ../../Unity
+NAME		=	LedDriver_test
+CC			=	cc
+CFLAGS		=	-Wall -Wextra -Werror -g
 
-INC_DIRS = -I. \
-           -I$(UNITY_ROOT)/src \
-           -I$(UNITY_ROOT)/extras/fixture/src \
-           -I$(UNITY_ROOT)/extras/memory/src
+UNITY_ROOT	=	/home/jinwoki2/Desktop/github/circle_4/TDD_study/Unity
 
-SRC_FILES = $(UNITY_ROOT)/src/unity.c \
-            $(UNITY_ROOT)/extras/fixture/src/unity_fixture.c \
-            $(UNITY_ROOT)/extras/memory/src/unity_memory.c \
-            LedDriver.c \
-            LedDriverTest.c \
-            LedDriverTestRunner.c \
-            AllTests.c
+INCLUDES	=	-I. \
+				-I$(UNITY_ROOT)/src \
+				-I$(UNITY_ROOT)/extras/fixture/src \
+				-I$(UNITY_ROOT)/extras/memory/src
 
-TARGET = LedDriverTest
+UNITY_SRCS	=	$(UNITY_ROOT)/src/unity.c \
+				$(UNITY_ROOT)/extras/fixture/src/unity_fixture.c \
+				$(UNITY_ROOT)/extras/memory/src/unity_memory.c
 
-all: $(TARGET)
-# 	./$(TARGET)
+MAIN_SRCS	=
 
-$(TARGET): $(SRC_FILES)
-	$(CC) $(CFLAGS) $(INC_DIRS) $(SRC_FILES) -o $(TARGET)
+SRCS		=	$(UNITY_SRCS) \
+				$(MAIN_SRCS)
 
-clean:
-	rm -f $(TARGET)
+OBJ_DIR		=	OBJ
+OBJS		=	$(addprefix $(OBJ_DIR)/, $(notdir $(SRCS:.c=.o)))
 
-.PHONY: all clean
+####################################################################333
+
+all			:	$(NAME)
+				./$(NAME) -v
+
+$(NAME)		:	$(OBJS)
+				$(CC) $(CFLAGS) -o $@ $^
+

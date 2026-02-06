@@ -6,7 +6,7 @@
 #    By: jinwoki2 <jinwoki2@student.42gyeongsan.kr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/05 23:05:04 by jinwoki2          #+#    #+#              #
-#    Updated: 2026/02/05 23:57:32 by jinwoki2         ###   ########.fr        #
+#    Updated: 2026/02/06 20:46:21 by jinwoki2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ vpath %.c $(sort $(dir $(SRCS)))
 
 # 기본 규칙
 all				:	$(NAME)
-					./$(NAME)
+					./$(NAME) -v
 
 # 실행 파일 생성 규칙
 $(NAME)			:	$(OBJS)
