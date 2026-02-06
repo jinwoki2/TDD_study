@@ -1,7 +1,7 @@
 # TDD Study in C
 
-[!NOTE]
-## 도서 정보
+> [!NOTE]
+> ## 도서 정보
 - **도서명**: 임베디드 C를 위한 TDD (Test-Driven Development for Embedded C)
 - **저자**: 제임스 W. 그레닝 (James W Greening)
 - **역자**: 신제용, 한주영
@@ -58,4 +58,16 @@ UNITY_SRCS  = $(UNITY_ROOT)/src/unity.c \
 MAIN_SRCS   = 
 SRCS        = $(UNITY_SRCS) $(MAIN_SRCS)
 ```
-```
+
+## 환경 설정 (Setup)
+
+### Unity 프레임워크 추가
+
+> [!IMPORTANT]
+> 서브모듈 추가 후 반드시 `git submodule update --init`을 실행해야 파일이 로드됩니다.
+
+`git submodule`을 통해 Unity를 프로젝트에 추가합니다.
+```bash
+git submodule add <저장소_URL> <경로>
+# 예시:
+git submodule add git@github.com:ThrowTheSwitch/Unity.git external/Unity
