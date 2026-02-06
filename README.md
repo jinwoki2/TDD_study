@@ -1,6 +1,7 @@
 # TDD Study in C
 
 ## 도서 정보
+|  |  |
 | :--- | :--- |
 | **도서명** | 임베디드 C를 위한 TDD (Test-Driven Development for Embedded C) |
 | **저자** | 제임스 W. 그레닝 (James W Greening) |
