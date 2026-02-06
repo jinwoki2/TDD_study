@@ -1,15 +1,18 @@
-교재: 임베디드 C를 위한 TDD
+Book			:	임베디드 C를 위한 TDD (Test-Driven Development for Embedded C)
+	Author		:	제임스 W. 그레닝 (James W Greening)
+	Translator	:	신제용, 한주영
+	Publisher	:	(주)도서출판 인사이트(insight)
 
-권장 prerequisite: OOP in C 
+Recommendation prerequisite skill: OOP in C 
 
-얻을 수 있는 skill:
-- Test Harness(framwork) 사용법 (Unity, CppUTest)
+You can learn this book:
+- A method of Test Harness(framwork) - (Unity, CppUTest)
 - TDD in C
 - TDD in Embedded C
 - OOP in C
 - SOLID in C
 
-필수 사항
+Must
 - gitsubmodule을 통해 Unity를 불러온다
 	- git submodule add <저장소_URL> <경로>
 	- git submodule add git@github.com:ThrowTheSwitch/Unity.git .
