@@ -26,7 +26,7 @@
 `git submodule`을 통해 Unity를 프로젝트에 추가합니다.
 ```bash
 git submodule add <저장소_URL> <경로>
-# 예시:
+# 예시: 
 git submodule add git@github.com:ThrowTheSwitch/Unity.git external/Unity
 ```
 
@@ -35,10 +35,10 @@ git submodule add git@github.com:ThrowTheSwitch/Unity.git external/Unity
 
 ```makefile
 NAME        = test
-CC          = gcc
+CC          =
 CFLAGS      = -Wall -Wextra -Werror
 
-UNITY_ROOT  = ./external/Unity
+UNITY_ROOT  = # Unity 절대 경로
 
 INCLUDES    = -I. \
               -I$(UNITY_ROOT)/src \
@@ -49,7 +49,6 @@ UNITY_SRCS  = $(UNITY_ROOT)/src/unity.c \
               $(UNITY_ROOT)/extras/fixture/src/unity_fixture.c \
               $(UNITY_ROOT)/extras/memory/src/unity_memory.c
 
-MAIN_SRCS   = 
+MAIN_SRCS   = # 추가되는 소스 파일이나 테스트 파일
 SRCS        = $(UNITY_SRCS) $(MAIN_SRCS)
-```
 ```
