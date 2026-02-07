@@ -1,0 +1,12 @@
+# Object files
+OBJ/
+*.o
+
+# Executables
+test
+*.out
+*.exe
+*_test
+
+# vscode config
+.vscode/
