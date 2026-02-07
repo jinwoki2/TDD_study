@@ -34,6 +34,7 @@ git submodule add git@github.com:ThrowTheSwitch/Unity.git external/Unity
 
 ### Makefile 작성 가이드
 책의 예제를 따라갈 때는 도구들이 자동화되어 있지만, 직접 `make`를 실행하려면 `Makefile`에 Unity 소스 경로와 헤더 경로를 명시해야 합니다.
+책의 예제를 그대로 따라가고 싶다면, tddec-code/를 참고하십시오.
 
 ```makefile
 NAME        = test
