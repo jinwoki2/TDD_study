@@ -6,7 +6,7 @@
 /*   By: jinwoki2 <jinwoki2@student.42gyeongsan.kr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 02:46:06 by jinwoki2          #+#    #+#             */
-/*   Updated: 2026/02/07 04:14:22 by jinwoki2         ###   ########.fr       */
+/*   Updated: 2026/02/07 16:00:51 by jinwoki2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,12 @@ void	LedDriver_dtor(uint16_t	*vleds)
 
 void	LedDriver_TurnOn(int ledNum)
 {
-	*ledsAddress = ledNum;
+	(void)ledNum;
+	*ledsAddress = 1;
+}
+
+void	LedDriver_TurnOff(int ledNum)
+{
+	(void) ledNum;
+	*ledsAddress = 0;	
 }

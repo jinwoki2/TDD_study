@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   00_LedDriverTest.c                                 :+:      :+:    :+:   */
+/*   LedDriver_05_00_Test.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jinwoki2 <jinwoki2@student.42gyeongsan.kr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 23:17:06 by jinwoki2          #+#    #+#             */
-/*   Updated: 2026/02/07 04:02:46 by jinwoki2         ###   ########.fr       */
+/*   Updated: 2026/02/07 16:36:46 by jinwoki2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,13 @@ TEST(LedDriver, TurnOnLedOne)
 	LedDriver_ctor(&vLeds);
 	LedDriver_TurnOn(1);
 	TEST_ASSERT_EQUAL_HEX16(1, vLeds);
+}
+
+TEST(LedDriver, TurnOffLedOne)
+{
+	uint16_t	vLeds;
+	LedDriver_ctor(&vLeds);
+	LedDriver_TurnOn(1);
+	LedDriver_TurnOff(1);
+	TEST_ASSERT_EQUAL_HEX16(0, vLeds);
 }
