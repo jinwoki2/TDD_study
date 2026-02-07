@@ -6,7 +6,7 @@
 #    By: jinwoki2 <jinwoki2@student.42gyeongsan.kr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/06 22:43:16 by jinwoki2          #+#    #+#              #
-#    Updated: 2026/02/07 04:11:32 by jinwoki2         ###   ########.fr        #
+#    Updated: 2026/02/07 17:49:13 by jinwoki2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ vpath %.c $(sort $(dir $(SRCS)))
 ####################################################################333
 
 all				:	$(NAME)
-					./$(NAME)
+					./$(NAME) -v
 
 $(NAME)			:	$(OBJS)
 					$(CC) $(CFLAGS) -o $@ $^
@@ -57,7 +57,6 @@ clean			:
 fclean			:	clean
 					rm -f $(NAME)
 
-re				: 
-					fclean all
+re				:	fclean all
 
 .PHONY			: all clean fclean re
