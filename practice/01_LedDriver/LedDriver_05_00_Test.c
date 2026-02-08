@@ -6,7 +6,7 @@
 /*   By: jinwoki2 <jinwoki2@student.42gyeongsan.kr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 23:17:06 by jinwoki2          #+#    #+#             */
-/*   Updated: 2026/02/08 01:01:06 by jinwoki2         ###   ########.fr       */
+/*   Updated: 2026/02/08 17:02:34 by jinwoki2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,12 @@ TEST(LedDriver, AllOn)
 {
 	LedDriver_TurnAllOn();
 	TEST_ASSERT_EQUAL_HEX16(0xffff, vLeds);
+}
+
+// 드라이버가 하드웨어에서 현재 LED 상태를 가져오지 않는다는 것을 보여주는 테스트
+TEST(LedDriver, LedMemoryIsNotReadable)
+{
+	vLeds = 0xffff;
+	LedDriver_TurnOn(8);
+	TEST_ASSERT_EQUAL_HEX16(0x80, vLeds);
 }

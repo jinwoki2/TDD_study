@@ -6,7 +6,7 @@
 /*   By: jinwoki2 <jinwoki2@student.42gyeongsan.kr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 23:24:35 by jinwoki2          #+#    #+#             */
-/*   Updated: 2026/02/08 01:03:55 by jinwoki2         ###   ########.fr       */
+/*   Updated: 2026/02/08 17:03:31 by jinwoki2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,5 @@ TEST_GROUP_RUNNER(LedDriver)
 	RUN_TEST_CASE(LedDriver, TurnOnMultipleLeds);
 	RUN_TEST_CASE(LedDriver, AllOn);
 	RUN_TEST_CASE(LedDriver, TurnOffAnyLed);
+	RUN_TEST_CASE(LedDriver, LedMemoryIsNotReadable);
 }
