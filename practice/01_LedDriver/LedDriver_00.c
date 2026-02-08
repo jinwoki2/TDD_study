@@ -6,7 +6,7 @@
 /*   By: jinwoki2 <jinwoki2@student.42gyeongsan.kr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 02:46:06 by jinwoki2          #+#    #+#             */
-/*   Updated: 2026/02/08 17:55:26 by jinwoki2         ###   ########.fr       */
+/*   Updated: 2026/02/08 23:59:45 by jinwoki2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,16 @@ void	LedDriver_dtor(uint16_t	*vLeds)
 
 void	LedDriver_TurnOn(int ledNum)
 {
+	if (ledNum <= 0 || 16 < ledNum)
+		return ;
 	ledsImage |= __convertLedNumberToBit(ledNum);
 	__updateHardware();
 }
 
 void	LedDriver_TurnOff(int ledNum)
 {
+	if (ledNum <= 0 || 16 < ledNum)
+		return ;
 	ledsImage &= ~(__convertLedNumberToBit(ledNum));
 	__updateHardware();
 }
