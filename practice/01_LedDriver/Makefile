@@ -6,13 +6,13 @@
 #    By: jinwoki2 <jinwoki2@student.42gyeongsan.kr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/06 22:43:16 by jinwoki2          #+#    #+#              #
-#    Updated: 2026/02/07 17:49:13 by jinwoki2         ###   ########.fr        #
+#    Updated: 2026/02/08 00:43:42 by jinwoki2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	LedDriver_test
 CC			=	cc
-CFLAGS		=	-Wall -Wextra -Werror -g 
+CFLAGS		=	
 
 UNITY_ROOT	=	/home/jinwoki2/Desktop/github/circle_4/TDD_study/Unity
 

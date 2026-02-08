@@ -6,7 +6,7 @@
 /*   By: jinwoki2 <jinwoki2@student.42gyeongsan.kr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 23:17:06 by jinwoki2          #+#    #+#             */
-/*   Updated: 2026/02/07 16:44:26 by jinwoki2         ###   ########.fr       */
+/*   Updated: 2026/02/08 01:01:06 by jinwoki2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,24 @@ TEST(LedDriver, TurnOffLedOne)
 	LedDriver_TurnOn(1);
 	LedDriver_TurnOff(1);
 	TEST_ASSERT_EQUAL_HEX16(0, vLeds);
+}
+
+TEST(LedDriver, TurnOnMultipleLeds)
+{
+	LedDriver_TurnOn(9);
+	LedDriver_TurnOn(8);
+	TEST_ASSERT_EQUAL_HEX16(0x180, vLeds);
+}
+
+TEST(LedDriver, TurnOffAnyLed)
+{
+    LedDriver_TurnAllOn();
+    LedDriver_TurnOff(8);
+    TEST_ASSERT_EQUAL_HEX16(0xff7f, vLeds);
+}
+
+TEST(LedDriver, AllOn)
+{
+	LedDriver_TurnAllOn();
+	TEST_ASSERT_EQUAL_HEX16(0xffff, vLeds);
 }
