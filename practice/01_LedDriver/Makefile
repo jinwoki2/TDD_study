@@ -6,7 +6,7 @@
 #    By: jinwoki2 <jinwoki2@student.42gyeongsan.kr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/06 22:43:16 by jinwoki2          #+#    #+#              #
-#    Updated: 2026/02/08 00:43:42 by jinwoki2         ###   ########.fr        #
+#    Updated: 2026/02/09 01:13:46 by jinwoki2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,8 @@ UNITY_SRCS	=	$(UNITY_ROOT)/src/unity.c \
 MAIN_SRCS	=	LedDriver_05_00_Test.c \
 				LedDriver_05_01_TestRunner.c \
 				LedDriver_05_02_AllTests.c \
-				LedDriver_00.c
+				LedDriver_00.c \
+				RuntimeErrorStub.c \
 
 SRCS		=	$(UNITY_SRCS) \
 				$(MAIN_SRCS)
@@ -41,21 +42,26 @@ vpath %.c $(sort $(dir $(SRCS)))
 ####################################################################333
 
 all				:	$(NAME)
-					./$(NAME) -v
+					@echo "Running $(NAME)"
+					@./$(NAME) -v
 
 $(NAME)			:	$(OBJS)
-					$(CC) $(CFLAGS) -o $@ $^
+					@echo "Linking $(NAME)"
+					@$(CC) $(CFLAGS) -o $@ $^
 
 $(OBJ_DIR)/%.o	:	%.c
 					@mkdir -p $(OBJ_DIR)
-					$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+					@echo "compiling $(notdir $<)"
+					@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 
 clean			:
-					rm -rf $(OBJ_DIR)
+					@echo "Clean OBJS"
+					@rm -rf $(OBJ_DIR)
 
 fclean			:	clean
-					rm -f $(NAME)
+					@echo "Clean ExcuteFile"
+					@rm -f $(NAME)
 
 re				:	fclean all
 
