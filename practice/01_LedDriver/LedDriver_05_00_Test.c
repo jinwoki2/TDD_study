@@ -6,12 +6,14 @@
 /*   By: jinwoki2 <jinwoki2@student.42gyeongsan.kr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 23:17:06 by jinwoki2          #+#    #+#             */
-/*   Updated: 2026/02/08 23:59:17 by jinwoki2         ###   ########.fr       */
+/*   Updated: 2026/02/09 01:04:19 by jinwoki2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "unity_fixture.h"
 #include "LedDriver.h"
+#include "RuntimeError.h"
+#include "RuntimeErrorStub.h"
 
 TEST_GROUP(LedDriver);
 
@@ -99,3 +101,21 @@ TEST(LedDriver, OutOfBoundsTurnOffDoesNoHarm)
 	LedDriver_TurnOff(3141);
 	TEST_ASSERT_EQUAL_HEX16(0xffff, vLeds);
 }
+
+TEST(LedDriver, OutOfBoundsProducesRuntimeError)
+{
+	LedDriver_TurnOn(-1);
+	RUNTIME_ERROR("LED Driver: out-of-bounds LED", -1);
+	TEST_ASSERT_EQUAL_STRING("LED Driver: out-of-bounds LED",
+								RuntimeErrorStub_GetLastError());
+	TEST_ASSERT_EQUAL(-1, RuntimeErrorStub_GetLastParameter());
+}
+
+IGNORE_TEST(LedDriver, OutofBoundsToDo)
+{
+	/* TODO: 런타임에 무엇을 해야 할까? */
+}
+
+
+
+
