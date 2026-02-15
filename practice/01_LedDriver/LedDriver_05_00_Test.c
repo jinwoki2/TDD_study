@@ -6,7 +6,7 @@
 /*   By: jinwoki2 <jinwoki2@student.42gyeongsan.kr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 23:17:06 by jinwoki2          #+#    #+#             */
-/*   Updated: 2026/02/09 01:04:19 by jinwoki2         ###   ########.fr       */
+/*   Updated: 2026/02/13 14:41:58 by jinwoki2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,41 @@ IGNORE_TEST(LedDriver, OutofBoundsToDo)
 	/* TODO: 런타임에 무엇을 해야 할까? */
 }
 
+// Led Query Test
 
+TEST(LedDriver, IsOn)
+{
+	TEST_ASSERT_FALSE(LedDriver_IsOn(11));
+	LedDriver_TurnOn(11);
+	TEST_ASSERT_TRUE(LedDriver_IsOn(11));
+}
 
+TEST(LedDriver, OutOfBoundsLedsAreAlwaysOff)
+{
+	TEST_ASSERT_TRUE(LedDriver_IsOff(0));
+	TEST_ASSERT_TRUE(LedDriver_IsOff(17));
+    TEST_ASSERT_FALSE(LedDriver_IsOn(0));
+    TEST_ASSERT_FALSE(LedDriver_IsOn(17));
+}
 
+TEST(LedDriver, IsOff)
+{
+	TEST_ASSERT_TRUE(LedDriver_IsOff(12));
+	LedDriver_TurnOn(12);
+	TEST_ASSERT_FALSE(LedDriver_IsOff(12));
+}
+
+TEST(LedDriver, TurnOffMultipleLeds)
+{
+	LedDriver_TurnAllOn();
+	LedDriver_TurnOff(9);
+	LedDriver_TurnOff(8);
+	TEST_ASSERT_EQUAL_HEX16((~0x180)&0xffff, vLeds);
+}
+
+TEST(LedDriver, AllOff)
+{
+	LedDriver_TurnAllOn();
+	LedDriver_TurnAllOff();
+	TEST_ASSERT_EQUAL_HEX16(0, vLeds);
+}

@@ -6,7 +6,7 @@
 /*   By: jinwoki2 <jinwoki2@student.42gyeongsan.kr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 23:24:35 by jinwoki2          #+#    #+#             */
-/*   Updated: 2026/02/09 01:05:07 by jinwoki2         ###   ########.fr       */
+/*   Updated: 2026/02/13 14:42:14 by jinwoki2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,11 @@ TEST_GROUP_RUNNER(LedDriver)
 	RUN_TEST_CASE(LedDriver, OutOfBoundsTurnOffDoesNoHarm);
 	RUN_TEST_CASE(LedDriver, OutOfBoundsProducesRuntimeError);
 	RUN_TEST_CASE(LedDriver, OutofBoundsToDo);
+	RUN_TEST_CASE(LedDriver, IsOn);
+	RUN_TEST_CASE(LedDriver, OutOfBoundsLedsAreAlwaysOff);
+	RUN_TEST_CASE(LedDriver, IsOff);
+	RUN_TEST_CASE(LedDriver, OutOfBoundsLedsAreAlwaysOff);
+	RUN_TEST_CASE(LedDriver, TurnOffMultipleLeds);
+	RUN_TEST_CASE(LedDriver, AllOff);
+
 }
